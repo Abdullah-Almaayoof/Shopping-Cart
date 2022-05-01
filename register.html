@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>
+      Login Page
+    </title>
+    <!-- Bootstrap 4.6 -->
+<!-- Other Grepper results are for 3.4.1 -->
+<!-- Latest minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
+
+<!-- JS Bundle and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Daily Harvest</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Registration
+            <span class="visually-hidden"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div>
+  <form action="/register" method="POST">
+  <div class="text text-center">
+  <h6 align='left'> {{errmsg}} </h6>
+  <label required for="username">Username*:</label><br>
+  <input type="text"class="form-control"placeholder="Enter username" id="uname" name="uname" ><br>
+  <label required for="password">Password*:</label><br>
+  <input type="password" class="form-control" placeholder="Enter password" id="pass" name="pass"><br><br>
+  <label required for="password2">Confirm Password*:</label><br>
+  <input type="password" class="form-control" placeholder="Enter password" id="pass2" name="pass2"><br><br>
+   <label required for="firstName">First Name*:</label><br>
+  <input type="text"class="form-control"placeholder="Enter first name" id="fname" name="fname" ><br>
+  <label required for="lastName">Last Name*:</label><br>
+  <input type="text" class="form-control" placeholder="Enter last name" id="lname" name="lname"><br><br>
+    <input type="submit" value="Register">
+  </div>
+</form> 
+  </body>
+</html>

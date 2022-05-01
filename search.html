@@ -1,0 +1,56 @@
+<html>
+  <head>
+        <title>products List</title>
+        <!-- Latest minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
+    </head>
+  <body style="background-color:floralwhite">
+    <div class="text text-center">
+      	<h1>Daily Harvest</h1>
+	  	<table style = "width:80%" class="text text-center">
+      <h2>Welcome to your favorite grocery store</h2>
+        
+      <form action="/search" method="POST">
+		    <input id="searchBox" type="text" name="searchData">
+		    <input id="searchButton" type="submit" value="Search">
+	    </form>
+        
+  {% if not loggedIn %}
+	<div id="signInButton">
+		<a class="active" href="/loginForm">Sign In</a>
+  </div>
+    {% else %}
+		<h2>Hello, {{fname}}!</h2>
+			<a href="/checkout">Order History</a>
+			<hr>
+			<a href="/logout">Sign Out</a>
+  	{% endif %}
+	<a class="link" href="/cart"> Cart {{numItems}}</a>
+</div>
+    <h4 align="left" id="ItemName">Items</h4>
+		{% for row in product %}
+		<table>
+      <tr id="image">
+        <td>
+				<a href="/productDescription?productId={{row[0]}}"><img id="image" src= "static/images/{{row[3]}}"      width="200" height="200"/></p>
+			  </td>
+      </tr>
+			<tr id="productName">
+				<td>
+          <a href="/productDescription?productId={{row[0]}}">
+					{{row[1]}}
+				</td>
+			</tr>
+			<tr id="productPrice">
+				<td>
+					${{row[2]}}
+				</td>  
+			</tr>
+		</table>
+		{% endfor %}
+    <a href="/">Return To Home Page</a>
+	</div>
+</div>
+  </body>
+</html>
+
